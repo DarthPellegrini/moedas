@@ -122,7 +122,7 @@ public class FXMLController implements Initializable {
     	if (validaRespostas())
 	    	try {
 				resultado = neuralNetwork.Recognize(getRespostas());
-	    		showResultScreen(classificaMoeda(resultado));
+	    		showResultScreen(classificaMoedaCompleto(resultado));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -168,6 +168,28 @@ public class FXMLController implements Initializable {
 				((resultado[16]*100.0 >= 90) ? "\nModalidade (Natação Paralímpica): " + formataResultado(resultado[16]) : "") +
 				((resultado[17]*100.0 >= 90) ? "\nMascote (Tom): " + formataResultado(resultado[17]) : "") +
 				((resultado[18]*100.0 >= 90) ? "\nMascote (Vinícius): " + formataResultado(resultado[18]) : "")) : ""));
+    }
+    
+    private String classificaMoedaCompleto(double[] resultado) {
+    	return ("É uma moeda comemorativa? " + formataResultado(resultado[0]) + 
+    			"\nRaridade: " + (resultado[1]*100.0 >= 90 ? "É muito rara" : "Tem uma certa raridade") + 
+				"\nMoeda especial (Bandeira):               " + formataResultado(resultado[2]) +
+				"\nModalidade (Atletismo):                    " + formataResultado(resultado[3]) +
+				"\nModalidade (Natação):                      " + formataResultado(resultado[4]) +
+				"\nModalidade (Paratriatlo):                   " + formataResultado(resultado[5]) +
+				"\nModalidade (Golfe):                           " + formataResultado(resultado[6]) +
+				"\nModalidade (Basquetebol):                " + formataResultado(resultado[7]) +
+				"\nModalidade (Vela):                             " + formataResultado(resultado[8]) +
+				"\nModalidade (Paracanoagem):            " + formataResultado(resultado[9]) +
+				"\nModalidade (Rugbi):                          " + formataResultado(resultado[10]) +
+				"\nModalidade (Futebol):                       " + formataResultado(resultado[11]) +
+				"\nModalidade (Voleibol):                      " + formataResultado(resultado[12]) +
+				"\nModalidade (Atletismo Paralímpico): " + formataResultado(resultado[13]) +
+				"\nModalidade (Judô):                            " + formataResultado(resultado[14]) +
+				"\nModalidade (Boxe):                            " + formataResultado(resultado[15]) + 
+				"\nModalidade (Natação Paralímpica):   " + formataResultado(resultado[16]) +
+				"\nMascote (Tom):                                  " + formataResultado(resultado[17]) +
+				"\nMascote (Vinícius):                             " + formataResultado(resultado[18]));
     }
     
     private String formataResultado(double resultado) {
