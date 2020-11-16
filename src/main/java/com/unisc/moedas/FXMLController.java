@@ -142,7 +142,7 @@ public class FXMLController implements Initializable {
     private void showResultScreen(String resultado) {
     	Alert alert = new Alert(AlertType.INFORMATION);
     	alert.setTitle("Resultados");
-    	alert.setHeaderText("A moeda foi identificada com sucesso!");
+    	alert.setHeaderText("Observa-se a seguir as saídas da rede neural:");
     	alert.setContentText(resultado);
     	alert.showAndWait();
     }
@@ -159,7 +159,7 @@ public class FXMLController implements Initializable {
 				((resultado[7]*100.0 >= 90) ? "\nModalidade (Basquetebol): " + formataResultado(resultado[7]) : "") +
 				((resultado[8]*100.0 >= 90) ? "\nModalidade (Vela): " + formataResultado(resultado[8]) : "") +
 				((resultado[9]*100.0 >= 90) ? "\nModalidade (Paracanoagem): " + formataResultado(resultado[9]) : "") +
-				((resultado[10]*100.0 >= 90) ? "\nModalidade (Rugbi): " + formataResultado(resultado[10]) : "") +
+				((resultado[10]*100.0 >= 90) ? "\nModalidade (Rugby): " + formataResultado(resultado[10]) : "") +
 				((resultado[11]*100.0 >= 90) ? "\nModalidade (Futebol): " + formataResultado(resultado[11]) : "") +
 				((resultado[12]*100.0 >= 90) ? "\nModalidade (Voleibol): " + formataResultado(resultado[12]) : "") +
 				((resultado[13]*100.0 >= 90) ? "\nModalidade (Atletismo Paralímpico): " + formataResultado(resultado[13]) : "") +
@@ -173,28 +173,28 @@ public class FXMLController implements Initializable {
     private String classificaMoedaCompleto(double[] resultado) {
     	return ("É uma moeda comemorativa? " + formataResultado(resultado[0]) + 
     			"\nRaridade: " + (resultado[1]*100.0 >= 90 ? "É muito rara" : "Tem uma certa raridade") + 
-				"\nMoeda especial (Bandeira):               " + formataResultado(resultado[2]) +
-				"\nModalidade (Atletismo):                    " + formataResultado(resultado[3]) +
-				"\nModalidade (Natação):                      " + formataResultado(resultado[4]) +
-				"\nModalidade (Paratriatlo):                   " + formataResultado(resultado[5]) +
-				"\nModalidade (Golfe):                           " + formataResultado(resultado[6]) +
-				"\nModalidade (Basquetebol):                " + formataResultado(resultado[7]) +
-				"\nModalidade (Vela):                             " + formataResultado(resultado[8]) +
-				"\nModalidade (Paracanoagem):            " + formataResultado(resultado[9]) +
-				"\nModalidade (Rugbi):                          " + formataResultado(resultado[10]) +
-				"\nModalidade (Futebol):                       " + formataResultado(resultado[11]) +
-				"\nModalidade (Voleibol):                      " + formataResultado(resultado[12]) +
+				"\nMoeda especial (Bandeira):                " + formataResultado(resultado[2]) +
+				"\nModalidade (Atletismo):                     " + formataResultado(resultado[3]) +
+				"\nModalidade (Natação):                       " + formataResultado(resultado[4]) +
+				"\nModalidade (Paratriatlo):                    " + formataResultado(resultado[5]) +
+				"\nModalidade (Golfe):                            " + formataResultado(resultado[6]) +
+				"\nModalidade (Basquetebol):                 " + formataResultado(resultado[7]) +
+				"\nModalidade (Vela):                              " + formataResultado(resultado[8]) +
+				"\nModalidade (Paracanoagem):             " + formataResultado(resultado[9]) +
+				"\nModalidade (Rugby):                          " + formataResultado(resultado[10]) +
+				"\nModalidade (Futebol):                        " + formataResultado(resultado[11]) +
+				"\nModalidade (Voleibol):                       " + formataResultado(resultado[12]) +
 				"\nModalidade (Atletismo Paralímpico): " + formataResultado(resultado[13]) +
-				"\nModalidade (Judô):                            " + formataResultado(resultado[14]) +
-				"\nModalidade (Boxe):                            " + formataResultado(resultado[15]) + 
-				"\nModalidade (Natação Paralímpica):   " + formataResultado(resultado[16]) +
-				"\nMascote (Tom):                                  " + formataResultado(resultado[17]) +
-				"\nMascote (Vinícius):                             " + formataResultado(resultado[18]));
+				"\nModalidade (Judô):                             " + formataResultado(resultado[14]) +
+				"\nModalidade (Boxe):                             " + formataResultado(resultado[15]) + 
+				"\nModalidade (Natação Paralímpica):    " + formataResultado(resultado[16]) +
+				"\nMascote (Tom):                                   " + formataResultado(resultado[17]) +
+				"\nMascote (Vinícius):                              " + formataResultado(resultado[18]));
     }
     
     private String formataResultado(double resultado) {
     	resultado *= 100.0;
-    	return (resultado>90 ?  "Sim (" +  String.format("%1.2f%%", resultado) + " de certeza)" : "Não (" + String.format("%1.2f%%", 100-resultado) + " de certeza)");
+    	return (resultado>90 ?  "Sim (" +  String.format("%1.4f%%", resultado) + " de certeza)" : "Não (" + String.format("%1.4f%%", 100-resultado) + " de certeza)");
     }
     
     private boolean validaRespostas() {
