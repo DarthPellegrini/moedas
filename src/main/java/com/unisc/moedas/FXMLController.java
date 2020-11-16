@@ -150,7 +150,7 @@ public class FXMLController implements Initializable {
     private String classificaMoeda(double[] resultado) {
     	return ("É uma moeda comemorativa? " + formataResultado(resultado[0]) + 
     			((resultado[0]*100 >= 90 ) ?
-    			(((resultado[0]*100.0 >= 90) ? ("\nRaridade: " + (resultado[1]*100.0 >= 90 ? "É muito rara" : "Tem uma certa raridade")) : "") + 
+    			(((resultado[0]*100.0 >= 90) ? ("\nRaridade: " + (resultado[1]*100.0 >= 90 ? "É muito rara " : "Tem uma certa raridade ") + String.format("%1.4f%%", (resultado[1]*100.0)) ) : "") + 
 				((resultado[2]*100.0 >= 90) ? "\nMoeda especial (Bandeira): " + formataResultado(resultado[2]) : "") +
 				((resultado[3]*100.0 >= 90) ? "\nModalidade (Atletismo): " + formataResultado(resultado[3]) : "") +
 				((resultado[4]*100.0 >= 90) ? "\nModalidade (Natação): " + formataResultado(resultado[4]) : "") +
@@ -171,8 +171,8 @@ public class FXMLController implements Initializable {
     }
     
     private String classificaMoedaCompleto(double[] resultado) {
-    	return ("É uma moeda comemorativa? " + formataResultado(resultado[0]) + 
-    			"\nRaridade: " + (resultado[1]*100.0 >= 90 ? "É muito rara" : "Tem uma certa raridade") + 
+    	return ("É uma moeda comemorativa?           " + formataResultado(resultado[0]) + 
+    			"\nRaridade:                                            " + (resultado[1]*100.0 >= 90 ? "É muito rara" : "Tem uma certa raridade") + String.format(" (%1.4f%%)", (resultado[1]*100.0)) + 
 				"\nMoeda especial (Bandeira):                " + formataResultado(resultado[2]) +
 				"\nModalidade (Atletismo):                     " + formataResultado(resultado[3]) +
 				"\nModalidade (Natação):                       " + formataResultado(resultado[4]) +
