@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="326.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unisc.moedas.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="366.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unisc.moedas.FXMLController">
     <children>
       <Label fx:id="titulo" layoutX="28.0" layoutY="13.0">
          <font>
@@ -18,6 +18,8 @@
       <ChoiceBox fx:id="anoGravado" layoutX="303.0" layoutY="74.0" prefHeight="31.0" prefWidth="215.0" />
       <ChoiceBox fx:id="posicaoLogotipo" layoutX="303.0" layoutY="139.0" prefHeight="31.0" prefWidth="215.0" />
       <ChoiceBox fx:id="posicaoBrasil" layoutX="303.0" layoutY="203.0" prefHeight="31.0" prefWidth="215.0" />
-      <Button layoutX="240.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnOnClick" prefHeight="31.0" prefWidth="114.0" text="Classificar" />
+      <Button layoutX="240.0" layoutY="315.0" mnemonicParsing="false" onAction="#btnOnClick" prefHeight="31.0" prefWidth="114.0" text="Classificar" />
+      <ChoiceBox fx:id="modalidade" layoutX="303.0" layoutY="263.0" prefHeight="31.0" prefWidth="215.0" />
+      <Label layoutX="76.0" layoutY="256.0" prefHeight="45.0" prefWidth="180.0" text="Qual a modalidade do esporte? (Logotipo)" textAlignment="RIGHT" wrapText="true" />
     </children>
 </AnchorPane>
