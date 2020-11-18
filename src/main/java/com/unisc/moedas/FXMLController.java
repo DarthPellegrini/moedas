@@ -209,7 +209,7 @@ public class FXMLController implements Initializable {
     
     private String formataResultado(double resultado) {
     	resultado *= 100.0;
-    	return (resultado>90 ?  "Sim (" +  String.format("%1.4f%%", resultado) + " de certeza)" : "Não (" + String.format("%1.4f%%", 100-resultado) + " de certeza)");
+    	return (resultado>=50.0 ?  "Sim (" +  String.format("%1.4f%%", resultado) + " de certeza)" : "Não (" + String.format("%1.4f%%", 100-resultado) + " de certeza)");
     }
     
     private boolean validaRespostas() {
